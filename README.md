@@ -39,7 +39,7 @@ An hourly graph showing variations between the data sources passed to it
 a-time: takes in android time series, i-time: takes in iphone time series
 > (line-graph-for-hour-comparison a-time i-time)
 
-![Time Series now changed](/a-time.png)
+![Time Series now changed](/images/a-time.png)
 
 ## Tweets classification by tweet content
 Enables us to get tweets classified by containing image or not
@@ -49,7 +49,7 @@ Enables us to get tweets classified by containing image or not
 The above classified tweets as containing image or not per source can be visualized using this function
 >(histogram-tweets-by-image-category android-pics iphone-pics "Android" "Iphone")
 
-![Time Series now changed](/image-no-image.png)
+![Time Series now changed](/images/image-no-image.png)
 
 ## Sentiments by category
 Get sentiments of tweets by source category. lexicon can be any 'nrc, 'bing etc
@@ -61,11 +61,11 @@ Drawing a histogram for the sentiments of the category passed to the function
 
 Android Tweets sentiment
 
-![Time Series now changed](/tweets-android.png)
+![Time Series now changed](/images/tweets-android.png)
 
 Iphone Tweets sentiment
 
-![Time Series now changed](/iphone-tweets.png)
+![Time Series now changed](/images/iphone-tweets.png)
 
 ## Classification by positive and negative words
 using the different lexicons we can classify into positive or negative
@@ -75,4 +75,4 @@ using the different lexicons we can classify into positive or negative
 Bar graph for negative positive sentiment
 > (plot-negative-positive android 'bing)
 
-![Time Series now changed](/negative-positive.png)
+![Time Series now changed](/images/negative-positive.png)
