@@ -1,4 +1,4 @@
-#lang racket
+;#lang racket
 (require data-science)
 (require plot)
 (require math)
@@ -115,7 +115,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;; GET PICS
 (define (get-pics data-one data-two cate-one cate-two)
-  (list `("Android" ,(second (second data-one)))`("iPhone" ,(second (second data-two)))))
+  (list `(cate-one ,(second (second data-one)))`(cate-two ,(second (second data-two)))))
 ;;;;;;;;;;;;;;;;;;;;;;;;; GET NON PICS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define (get-no-pics data-one data-two category-one category-two)
   (list `(cate-one ,(second (first data-one))) `(cate-two ,(second (first data-two)))))
@@ -150,7 +150,7 @@
         (list->sentiment words #:lexicon lexicon)
          ))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; most common words ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define (get-sentiments-histogram dat)
+(define (get-sentiments-histogram dat label)
   (let ([sentiment (get-sentiments-by-category dat 'nrc)])
         (let ([counts (aggregate sum ($ sentiment 'sentiment) ($ sentiment 'freq))])
         
@@ -161,7 +161,7 @@
               (sort counts (λ (x y) (> (second x) (second y))))
               #:color "MediumSlateBlue"
               #:line-color "MediumSlateBlue"))
-            #:x-label "Affective Label"
+            #:x-label label
             #:y-label "Frequency"))
     ))
   )
