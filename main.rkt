@@ -7,6 +7,9 @@
 (require racket/date)
 (require (only-in srfi/19 string->date))
 
+(provide get-tweets read_json tweet-by-source convert-timestamp timestamp-by-type-new convert-timestamp bin-timestamps binned-times-per-category
+         fill-missing-bins time-EST count->percent line-graph-for-hour-comparison tweets-classification-by-image get-pics get-no-pics
+         histogram-tweets-by-image-category get-sentiments-by-category get-sentiments-histogram positive-negative-words plot-negative-positive)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;abstraction to refer to call with input ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define (get-tweets file-name)
   (call-with-input-file file-name read-json)
