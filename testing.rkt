@@ -16,3 +16,20 @@
 ;;;filling all the bins
 (define a-time (binned-times-per-category "Android" t))
 (define i-time (binned-times-per-category "iPhone" t))
+
+;;;line graph of android against iphone users
+(line-graph-for-hour-comparison a-time i-time)
+
+;;;getting tweets that have images or not
+(define android-pics (tweets-classification-by-image android))
+(define iphone-pics (tweets-classification-by-image iphone))
+
+;;;drawring their graph
+(histogram-tweets-by-image-category android-pics iphone-pics "Android" "Iphone")
+
+;;;;;; tweets by source
+(get-sentiments-histogram android "Tweets from Android")
+(get-sentiments-histogram iphone "Tweets from Iphone")
+
+;;;;; plotting negative and positive sentiments
+(plot-negative-positive android 'bing)
